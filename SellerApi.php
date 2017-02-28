@@ -62,7 +62,7 @@ class SellerApi
 
 		$post = array(
 			'api_key' => self::$api_key,
-			'message' => $this->pSQL($message)
+			'message' => SellerApi::pSQL($message)
 		);
 
 		if (!is_null($file) && !empty($file)) {
