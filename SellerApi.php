@@ -30,6 +30,50 @@ class SellerApi
 		$url = self::$api_url . 'seller/thread/' . (int) $id_thread;
 		return self::_apiCall($url, false);
 	}
+	
+	/**
+	 * Get the info on one product
+	 */
+	public function getProduct($id_product) {
+		$url = self::$api_url . 'seller/product/' . (int) $id_product;
+		return self::_apiCall($url, false);
+	}
+	
+	/**
+	 * Get all your products
+	 */
+	public function getProducts($options) {
+		$url = self::$api_url . 'seller/threads';
+		$url = self::_handleOptions($url, $options);
+		return self::_apiCall($url, false);
+	}
+	
+	/**
+	 * Get all your orders
+	 */
+	public function getOrders($options) {
+		$url = self::$api_url . 'seller/orders';
+		$url = self::_handleOptions($url, $options);
+		return self::_apiCall($url, false);
+	}
+	
+	/**
+	 * Get all your invoices
+	 */
+	public function getInvoices($options) {
+		$url = self::$api_url . 'seller/invoices';
+		$url = self::_handleOptions($url, $options);
+		return self::_apiCall($url, false);
+	}
+	
+	/**
+	 * Get all your bank / withdrawal information
+	 */
+	public function getBank($options) {
+		$url = self::$api_url . 'seller/bank';
+		$url = self::_handleOptions($url, $options);
+		return self::_apiCall($url, false);
+	}
 
 	/**
 	 * Get all messages for one thread
